@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source init
+source init.sh
 
 function help() {
   echo "DF - DeezFeeling Version Control System"
@@ -8,6 +8,7 @@ function help() {
   echo " log        -- view history of commit"
   echo " commit     -- commit changes"
   echo " head [id]  -- checkout to commit id"
+  echo " help       -- help command"
 }
 
 if [ "$#" != 1 ]
@@ -25,9 +26,16 @@ then
   exit 1
 fi
 
+if [ "$1" == "help" ]
+then
+  help
+  exit 0
+fi
+
 if [ "$1" == "init" ]
 then
-  $(init)
+  echo $(init)
+  exit 0
 fi
 
 if [ "$1" == "commit" ]
