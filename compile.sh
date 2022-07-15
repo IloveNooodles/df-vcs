@@ -59,7 +59,6 @@ function head(){
   then  
     local WD="${PWD}/.df/snapshots"
     local num=$(ls $dir | wc -l)
-    echo $((num - 1))
     if [ $1 -lt 0 -o $1 -gt $((num - 1)) ]  
     then
       echo "[-] No such commit id"
@@ -68,7 +67,7 @@ function head(){
 
     rm -rf *
     cp -r "$WD/$1/"* .
-    echo "[*] Successfully checkout to the commit-ID of $CURRENT_VERSION"
+    echo "[*] Successfully checkout to the commit-ID of $1"
     exit 0
   fi
 
