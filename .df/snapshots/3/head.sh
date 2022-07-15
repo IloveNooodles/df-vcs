@@ -14,7 +14,7 @@ function head(){
     fi
 
     rm *
-    cp "$WD/$1/*" .
+    cp -r "$WD/$1/*" .
     
   fi
 
