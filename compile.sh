@@ -68,6 +68,7 @@ function head(){
 
     rm -rf *
     cp -r "$WD/$1/"* .
+    echo "[*] Successfully checkout to the commit-ID of $CURRENT_VERSION"
     exit 0
   fi
 
