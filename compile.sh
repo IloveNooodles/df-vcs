@@ -65,8 +65,8 @@ function head(){
       exit 1
     fi
 
-    rm -rf
-    cp "$WD/$1/"* .
+    rm -rf *
+    cp -r "$WD/$1/"* .
     exit 0
   fi
 
@@ -84,7 +84,7 @@ function commit() {
     echo "[*] Commiting changes"
     local CURRENT_VERSION=$(ls $WD | wc -l)
     test -d "$WD/$CURRENT_VERSION" || mkdir "$WD/$CURRENT_VERSION"
-    cp * "$WD/$CURRENT_VERSION"
+    cp -r * "$WD/$CURRENT_VERSION"
     touch "$WD/$CURRENT_VERSION/.commit"
     echo "commitID  : $CURRENT_VERSION" >> "$WD/$CURRENT_VERSION/.commit"
     echo "author    : $USER" >> "$WD/$CURRENT_VERSION/.commit"
