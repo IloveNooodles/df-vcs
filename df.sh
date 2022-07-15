@@ -1,21 +1,21 @@
 #!/usr/bin/env bash
 source init.sh
 source commit.sh
+source log.sh
 
 function help() {
   echo "DF - DeezFeeling Version Control System"
   echo "Available Commands: "
-  echo " init       -- init current directory"
-  echo " log        -- view history of commit"
-  echo " commit     -- commit changes"
-  echo " head [id]  -- checkout to commit id"
-  echo " help       -- help command"
+  echo " init                 -- init current directory"
+  echo " log                  -- view history of commit"
+  echo " commit [message]     -- commit changes"
+  echo " head   [id]          -- checkout to commit id"
+  echo " help                 -- help command"
 }
 
 if [ "$#" -lt 1 ]
 then
   echo "[-] Please provide correct number of argument"
-  echo ""
   help
   exit 1
 fi
@@ -35,13 +35,18 @@ fi
 
 if [ "$1" == "init" ]
 then
-  echo $(init)
+  echo "$(init)"
   exit 0
 fi
 
 if [ "$1" == "commit" ]
 then
-  echo $(commit "$2")
+  echo "$(commit "$2")"
   exit 0
 fi
 
+if [ "$1" == "log" ]
+then
+  echo "$(log)"
+  exit 0
+fi
