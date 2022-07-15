@@ -50,3 +50,9 @@ then
   echo "$(log)"
   exit 0
 fi
+
+if [ "$1" == "head" ]
+then
+  echo "$(head "$2")"
+  exit 0
+fi
