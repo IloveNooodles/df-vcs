@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
 source init.sh
 source commit.sh
 source log.sh

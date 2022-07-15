@@ -1,4 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/bash
+
 WD="${PWD}/.df/snapshots"
 
 function commit() {
