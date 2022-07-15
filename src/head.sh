@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function head(){
-
+  
   if test -d ".df"
   then  
     local WD="${PWD}/.df/snapshots"
@@ -13,7 +13,7 @@ function head(){
       exit 1
     fi
 
-    rm -rf
+    rm -rf *
     cp -r "$WD/$1/"* .
     exit 0
   fi

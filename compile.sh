@@ -45,6 +45,7 @@ function log() {
       cat "$dir/$directory/.commit"
       echo -e "\n"
     done
+    exit 0
   fi
 
   echo "[-] Repository hasn't been initialized";
