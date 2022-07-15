@@ -65,7 +65,7 @@ function head(){
       exit 1
     fi
 
-    rm -rf *
+    rm -rf
     cp "$WD/$1/"* .
     exit 0
   fi
