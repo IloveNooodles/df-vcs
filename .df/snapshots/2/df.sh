@@ -2,7 +2,6 @@
 source init.sh
 source commit.sh
 source log.sh
-source head.sh
 
 function help() {
   echo "DF - DeezFeeling Version Control System"
@@ -57,11 +56,11 @@ then
 
   if [ -z "$2" ]
   then
-    echo "[-] Please provide command with commit id"
+    echo "[-] Please provide with commit id"
     help
     exit 1
   fi
 
-  echo "$(head $2)"
+  echo "$(head "$2")"
   exit 0
 fi
