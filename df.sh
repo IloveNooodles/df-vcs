@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 source init.sh
+source commit.sh
 
 function help() {
   echo "DF - DeezFeeling Version Control System"
@@ -11,7 +12,7 @@ function help() {
   echo " help       -- help command"
 }
 
-if [ "$#" != 1 ]
+if [ "$#" -lt 1 ]
 then
   echo "[-] Please provide correct number of argument"
   echo ""
@@ -40,6 +41,7 @@ fi
 
 if [ "$1" == "commit" ]
 then
-  echo "[*] Comitting changes"
-  test -d ""
+  echo $(commit "$2")
+  exit 0
 fi
+
