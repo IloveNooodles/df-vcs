@@ -1,13 +1,13 @@
 #!/bin/bash
 
-dir="${PWD}/.df/snapshots"
+
 
 function log() {
   
   if test -d ".df"
-  then  
+  then 
+    local dir="${PWD}/.df/snapshots"
     local num=$(ls $dir | wc -l)
-
     if [ $num == 0 ]
     then
       echo "[-] No commit has been made"
@@ -19,6 +19,7 @@ function log() {
       cat "$dir/$directory/.commit"
       echo -e "\n"
     done
+    exit 0
   fi
 
   echo "[-] Repository hasn't been initialized";

@@ -15,5 +15,6 @@ function init() {
   mkdir ".df/snapshots"
   echo  "[+] repository created succesfully"
   exit 0
+  
 }
 

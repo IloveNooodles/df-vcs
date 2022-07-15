@@ -1,11 +1,10 @@
 #!/bin/bash
 
-WD="${PWD}/.df/snapshots"
-
 function head(){
+
   if test -d ".df"
   then  
-
+    local WD="${PWD}/.df/snapshots"
     local num=$(ls $dir | wc -l)
     echo $((num - 1))
     if [ $1 -lt 0 -o $1 -gt $((num - 1)) ]  
@@ -15,10 +14,11 @@ function head(){
     fi
 
     rm *
-    cp "$WD/$1/"* .
+    cp -r "$WD/$1/"* .
     exit 0
   fi
 
   echo "[-] Repository hasn't been initialized";
   exit 1
+
 }
